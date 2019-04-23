@@ -9,5 +9,6 @@ urlpatterns = [
     url(r'^archives/(?P<year>[0-9]{4})/(?P<month>[0-9]{1,2})/$',views.ArchiveView.as_view(),name='archives'),
     #  category/([0-9]+)
     url(r'^category/(?P<pk>[0-9]+)/$',views.CategoryView.as_view(),name='category'),
-    url(r'^about',views.about,name='about')
+    url(r'^about',views.about,name='about'),
+    url(r'^more$',views.more,name='more'),
 ]

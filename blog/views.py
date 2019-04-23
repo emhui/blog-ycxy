@@ -109,3 +109,11 @@ class PostDetailView(DetailView):
 
 def about(request):
     return render(request,'about.html')
+
+def more(request):
+    post_list = Post.objects.all().order_by('-created_time')
+    return render(request, 'blog/more.html', context={
+        'title': '首页',
+        'welcome': '这是第一个页面',
+        'post_list': post_list,
+    })
