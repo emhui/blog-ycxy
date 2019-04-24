@@ -6,9 +6,9 @@ from .forms import CommentForm
 from blog.models import Post
 from .models import Comment
 
-def post_comment(request, pk):
+def post_comment(request, post_pk):
     # 1. 获取当前对应的文章对象
-    post = get_object_or_404(Post,pk=pk)
+    post = get_object_or_404(Post,pk=post_pk)
     # 2. 判断当前方法
     if request.method == 'POST':
         # 3. 获取表单

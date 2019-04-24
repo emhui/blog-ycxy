@@ -11,4 +11,5 @@ urlpatterns = [
     url(r'^category/(?P<pk>[0-9]+)/$',views.CategoryView.as_view(),name='category'),
     url(r'^about',views.about,name='about'),
     url(r'^more$',views.more,name='more'),
+    url(r'^search/$',views.search,name='search')
 ]
