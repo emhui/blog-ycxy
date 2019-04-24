@@ -19,4 +19,5 @@ def get_categories():
 
 @register.simple_tag
 def get_tags():
-    return Tag.objects.annotate(num_posts=Count('post')).filter(num_posts_gt=0)
+    # num_posts__gt 这里 __ 是2个
+    return Tag.objects.annotate(num_posts=Count('post')).filter(num_posts__gt=0)

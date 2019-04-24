@@ -131,3 +131,8 @@ def search(request):
         'err_msg':err_msg,
         'post_list':post_list
     })
+
+class TagView(IndexView):
+    def get_queryset(self):
+        tag = get_object_or_404(Tag,pk=self.kwargs.get('pk'))
+        return super(TagView,self).get_queryset().filter(tags=tag)
